@@ -26,13 +26,12 @@ bank_tickers = [
 start_date = "2023-10-01"
 end_date = "2024-10-31"
 for ticker in bank_tickers:
-    # Descargar datos del ticker
+    # Descarga los datos del ticker
     stock = yf.Ticker(ticker)
 
     historic = stock.history(period="1y")
     #   historic = stock.history(start=start_date, end=end_date)
     if not historic.empty:
-        # Obtener información adicional
         information = stock.info
 
         temp_df = pd.DataFrame(
